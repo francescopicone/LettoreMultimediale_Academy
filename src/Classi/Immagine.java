@@ -2,18 +2,18 @@ package Classi;
 
 public class Immagine extends ElementoMultimediale implements RegolabileLuminosita {
 
-    private int luminosita;
+    private int luminosita = 0;
     public Immagine(String titolo, int luminosita){
         super(titolo);
-        this.luminosita = luminosita;
+        aumentaLuminosita(luminosita);
     }
 
     @Override
     public void aumentaLuminosita(int qt) {
-        if(this.luminosita + qt <= 100)
+        if(this.luminosita + qt <= MAXLUMINOSITA)
             this.luminosita += qt;
         else
-            this.luminosita = 100;
+            this.luminosita = MAXLUMINOSITA;
     }
 
     @Override
@@ -24,6 +24,7 @@ public class Immagine extends ElementoMultimediale implements RegolabileLuminosi
             this.luminosita = 0;
     }
 
+    @Override
     public int getLuminosita(){
         return this.luminosita;
     }

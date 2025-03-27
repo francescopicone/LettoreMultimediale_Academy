@@ -2,20 +2,20 @@ package Classi;
 
 public class RegistrazioneAudio extends ElementoMultimediale implements Riproducibile, RegolabileVolume {
 
-    private int volume;
+    private int volume = 0;
     private int durata;
     public RegistrazioneAudio(String titolo, int durata, int volume){
         super(titolo);
-        this.durata = durata;
-        this.volume = volume;
+        setDurata(durata);
+        alzaVolume(volume);
     }
 
     @Override
     public void alzaVolume(int qt){
-        if (this.volume + qt <= 100)
+        if (this.volume + qt <= MAXVOLUME)
             this.volume += qt;
         else
-            this.volume = 100;
+            this.volume = MAXVOLUME;
     }
     @Override
     public void abbassaVolume(int qt){
@@ -25,11 +25,13 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
             this.volume = 0;
     }
 
+    @Override
     public int getDurata(){
         return this.durata;
     }
 
-    public void setDurata(){
+    @Override
+    public void setDurata(int durata){
         this.durata = durata;
     }
 

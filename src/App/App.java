@@ -8,7 +8,8 @@ public class App {
     public static void main(String[] args) {
 
         System.out.println("########## BENVENUTO NEL LETTORE MULTIMEDIALE ##########");
-        LettoreMultimediale lettore = new LettoreMultimediale(3);
+        // Creo un lettore multimediale con una dimensione memoria (numero di elementi multimediali memorizzabili nell'array) = 5
+        LettoreMultimediale lettore = new LettoreMultimediale(5);
         lettore.addElementiMultimediali();
         lettore.printElementi();
 

@@ -2,22 +2,23 @@ package Classi;
 
 public class Video extends ElementoMultimediale implements Riproducibile, RegolabileVolume, RegolabileLuminosita {
 
-    private int volume;
+
     private int durata;
-    private int luminosita;
+    private int volume = 0;
+    private int luminosita = 0;
     public Video(String titolo, int durata, int volume, int luminosita){
         super(titolo);
-        this.durata = durata;
-        this.luminosita = luminosita;
-        this.volume = volume;
+        setDurata(durata);
+        aumentaLuminosita(luminosita);
+        alzaVolume(volume);
     }
 
     @Override
     public void alzaVolume(int qt){
-        if (this.volume + qt <= 100)
+        if (this.volume + qt <= MAXVOLUME)
             this.volume += qt;
         else
-            this.volume = 100;
+            this.volume = MAXVOLUME;
     }
     @Override
     public void abbassaVolume(int qt){
@@ -29,10 +30,10 @@ public class Video extends ElementoMultimediale implements Riproducibile, Regola
 
     @Override
     public void aumentaLuminosita(int qt) {
-        if(this.luminosita + qt <= 100)
+        if(this.luminosita + qt <= MAXLUMINOSITA)
             this.luminosita += qt;
         else
-            this.luminosita = 100;
+            this.luminosita = MAXLUMINOSITA;
     }
 
     @Override
@@ -41,6 +42,25 @@ public class Video extends ElementoMultimediale implements Riproducibile, Regola
             this.luminosita -= qt;
         else
             this.luminosita = 0;
+    }
+
+    @Override
+    public void setDurata(int durata) {
+        this.durata = durata;
+    }
+
+    @Override
+    public int getDurata() {
+        return durata;
+    }
+
+    @Override
+    public int getLuminosita() {
+        return this.luminosita;
+    }
+
+    public int getVolume(){
+        return this.volume;
     }
 
     @Override
