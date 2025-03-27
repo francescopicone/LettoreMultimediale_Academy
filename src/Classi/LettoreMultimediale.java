@@ -49,6 +49,7 @@ public class LettoreMultimediale {
             return null;
         }
     }
+
     public void addElementiMultimediali(){
         for (int i = 0; i < elementiMultimediali.length; i++){
             elementiMultimediali[i] = createElementoMultimediale();

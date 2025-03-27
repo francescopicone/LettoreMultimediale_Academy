@@ -6,6 +6,7 @@ public class Video extends ElementoMultimediale implements Riproducibile, Regola
     private int durata;
     private int volume = 0;
     private int luminosita = 0;
+
     public Video(String titolo, int durata, int volume, int luminosita){
         super(titolo);
         setDurata(durata);
@@ -20,6 +21,7 @@ public class Video extends ElementoMultimediale implements Riproducibile, Regola
         else
             this.volume = MAXVOLUME;
     }
+
     @Override
     public void abbassaVolume(int qt){
         if(this.volume - qt >= 0)

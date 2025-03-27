@@ -3,6 +3,7 @@ package Classi;
 public class Immagine extends ElementoMultimediale implements RegolabileLuminosita {
 
     private int luminosita = 0;
+
     public Immagine(String titolo, int luminosita){
         super(titolo);
         aumentaLuminosita(luminosita);

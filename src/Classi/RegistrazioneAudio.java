@@ -17,6 +17,7 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
         else
             this.volume = MAXVOLUME;
     }
+
     @Override
     public void abbassaVolume(int qt){
         if(this.volume - qt >= 0)

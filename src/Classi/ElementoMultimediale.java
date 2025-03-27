@@ -11,11 +11,13 @@ public abstract class ElementoMultimediale {
     public String getTitolo(){
         return this.titolo;
     }
+
     public void setTitolo(String titolo){
         this.titolo = titolo;
     }
 
     public abstract String getTipo();
+
     public abstract void esegui();
 
 }
