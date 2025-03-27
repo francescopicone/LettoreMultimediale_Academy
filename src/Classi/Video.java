@@ -5,11 +5,11 @@ public class Video extends ElementoMultimediale implements Riproducibile, Regola
     private int volume;
     private int durata;
     private int luminosita;
-    public Video(String titolo, int durata){
+    public Video(String titolo, int durata, int volume, int luminosita){
         super(titolo);
         this.durata = durata;
-        this.luminosita = 50;
-        this.volume = 15;
+        this.luminosita = luminosita;
+        this.volume = volume;
     }
 
     @Override

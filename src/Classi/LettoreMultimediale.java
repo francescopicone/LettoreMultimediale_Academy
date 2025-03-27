@@ -23,15 +23,23 @@ public class LettoreMultimediale {
 
             switch (scelta) {
                 case 1:
-                    return new Immagine(titolo);
+                    System.out.println("Inserisci luminosita: ");
+                    int luminositaImmagine = scanner.nextInt();
+                    return new Immagine(titolo, luminositaImmagine);
                 case 2:
                     System.out.println("Inserisci durata: ");
                     int durataAudio = scanner.nextInt();
-                    return new RegistrazioneAudio(titolo, durataAudio);
+                    System.out.println("Inserisci volume: ");
+                    int volumeAudio = scanner.nextInt();
+                    return new RegistrazioneAudio(titolo, durataAudio, volumeAudio);
                 case 3:
                     System.out.println("Inserisci durata: ");
                     int durataVideo = scanner.nextInt();
-                    return new Video(titolo, durataVideo);
+                    System.out.println("Inserisci volume: ");
+                    int volumeVideo = scanner.nextInt();
+                    System.out.println("Inserisci luminosita: ");
+                    int luminositaVideo = scanner.nextInt();
+                    return new Video(titolo, durataVideo, volumeVideo, luminositaVideo);
                 default:
                     System.out.println("Scelta non valida, riprova.");
                     return null;
